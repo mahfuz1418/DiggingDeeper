@@ -24,8 +24,11 @@ Route::middleware('auth')->group(function () {
 
     // Route for post
     Route::post('/post-store', [PostController::class, 'store'])->name('post.store');
-
     Route::get('/get-cache', [PostController::class, 'getCache']);
+
+    // Localization
+    Route::get('/dashboard/{lang}', [PostController::class, 'localization']);
+
 });
 
 require __DIR__.'/auth.php';

@@ -16,25 +16,33 @@
                                 {{ session('success') }}
                             </div>
                         @endif
+                        <div>
+                            <a href="{{ url('/dashboard/en') }}">English</a>
+                            <a href="{{ url('/dashboard/hi') }}">Hindi</a>
+                            <a href="{{ url('/dashboard/ar') }}">Arabic</a>
+                            <a href="{{ url('/dashboard/ru') }}">Russia</a>
+                            <a href="{{ url('/dashboard/fr') }}">France</a>
+                        </div>
+
                         <div class="card-body">
-                          <h2 class="card-title text-center">Post </h5>
+                          <h2 class="card-title text-center">@lang('lang.post') </h5>
                             <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                  <label for="title">Post Title</label>
+                                  <label for="title">@lang('lang.post_title')</label>
                                   <input type="text" id="title" class="form-control" name="title" aria-describedby="emailHelp" placeholder="Enter Title">
                                     @error('title')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="content">Content</label>
+                                    <label for="content">@lang('lang.content')</label>
                                     <textarea class="form-control" name="content" id="content" cols="30" rows="5"></textarea>
                                     @error('content')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                   </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">@lang('lang.submit')</button>
                             </form>
                         </div>
                       </div>
