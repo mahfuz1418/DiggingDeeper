@@ -24,6 +24,8 @@ Route::middleware('auth')->group(function () {
 
     // Route for post
     Route::post('/post-store', [PostController::class, 'store'])->name('post.store');
+
+    Route::get('/get-cache', [PostController::class, 'getCache']);
 });
 
 require __DIR__.'/auth.php';
